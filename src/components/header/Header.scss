@@ -1,0 +1,276 @@
+
+.showcase{
+    position: relative;
+    height: 100vh;
+    background: url('../../assets/background3.jpg')no-repeat center center/cover;
+    
+}
+.showcase::after{
+    content: " ";
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.75);  
+    z-index: 1;
+    
+}
+
+.menu{
+  height: 70px; /* 3rem */
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  position: fixed;
+  z-index: 3; 
+}
+.menu-btn{
+  position: absolute;
+  z-index: 4;
+  top: 20px;
+  right: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  position: fixed;
+  display: none;
+
+  .btn-line{
+    width: 28px;
+    height: 3px;
+    margin: 0px 0px  5px 0px;
+    background: rgb(189, 205, 230);
+    transition: all 0.5s ease-out;
+  }
+    // turn button into x
+  &.close{
+    transform: rotate(180deg);
+    .btn-line{
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+
+}
+// Menu Overlay
+.menu-nav{
+  display: flex;
+  opacity: 0.9;
+  
+}
+
+
+.container{
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+   
+}
+.menu .container{
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    font-weight: var(--font-semi); 
+    padding: 20px;
+    color: var(--second-color);
+   
+    
+}
+.menu .container:nth-of-type(2){
+  justify-content: end;
+}
+.menu-branding{
+  position: absolute;
+  top: 5px;
+  left: 30px;
+}
+.menu-branding a{
+    color: rgb(189, 205, 230);
+    font-weight: bold;
+    font-size: 1.5rem;
+   
+}
+.mark{
+    color: hsl(224, 89%, 60%);
+}
+.menu-nav{
+  margin-right: 20px;
+}
+.menu-nav li {
+    margin-left: 20px ;
+}
+.menu-nav li a{
+    padding: 15px;
+    color: rgb(189, 205, 230)
+}
+.content{
+    position: relative;
+    z-index: 2;
+    color:rgb(189, 205, 230)
+}
+.home__title{
+    margin-top: 30vh;
+    
+}
+.home__data {
+    align-self: center;
+} 
+.home__title-color {
+    color: var(--first-color);
+    
+}
+.font-h{
+    font-size: var(--big-font-size);
+}
+.stack{
+    
+    padding: 0.2rem 1rem;
+    background: rgba(lighten(#444, 2), 0.5);
+    border-radius: 5px;
+    border-bottom: 1px solid var(--first-color);
+}
+.icons {
+    margin-top: 2.5rem;
+  
+
+    a {
+      padding: 0.4rem;
+      transition: all 1s ease-out;
+      color:  rgb(189, 205, 230); 
+
+      &:hover {
+        color: var(--first-color);
+      }
+    }
+}
+
+.pic{
+    width: 300px;
+    width: 300px;
+    border-radius: 20px;
+
+}
+.pic img{
+    border-radius: 50%;
+    border: 3px solid #eece1a;
+}
+.content .container{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+
+@media (max-width:765px){
+    .container .menu-nav{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+    }
+    .menu-branding{
+        left:90px;
+    }
+}
+
+@media (max-width:1324px){
+    .stack{
+        font-size: var( --h2-font-size);
+    }
+}
+@media (max-width:991px){
+   .font-h{
+    font-size: 2rem;
+   }
+   .pic{
+    width: 200px;
+    height: 200px;
+   }
+   .stack{
+    font-size: 1.5rem;
+   }
+   .icons{
+    margin-top: 1.5rem;
+   }
+  
+}
+@media (max-width:742px){
+    .font-h{
+        font-size: 1.5rem;
+    }
+    .stack{
+        font-size: 1rem;
+    }
+    .home__title{
+        margin-top: 40vh;
+        
+    }
+}
+@media (max-width:640px){
+    .content .container{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .home__title{
+        margin-top:0;
+        
+    }
+    .pic{
+        margin-top: 20vh;
+    }
+    .font-h{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:553px){
+    .menu-branding{
+        left:15px;
+    }
+}
+@media (max-width:456px){
+    .stack{
+        font-size: 1rem;
+    }
+}
+@media (max-width:330px){
+    .pic{
+        width: 150px;
+        height:150px;
+        margin-top: 25vh;
+       }
+    .font-h{
+        font-size: 1rem;
+        
+    }
+    .stack{
+        font-size:0.85rem;
+        font-weight: 400;
+        margin-top: 0.9rem;
+    }
+    .home__title{
+        margin-top:1rem;
+        
+    }
+    .icons{
+        margin-top: 0.8rem;
+    }
+    .icons .fab{
+        font-size: 1rem;
+    }
+}
